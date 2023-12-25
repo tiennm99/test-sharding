@@ -21,8 +21,8 @@ public class CouchbaseReplicationTest {
 
   public void setup() {
     // Connect to Couchbase nodes
-    cluster1 = Cluster.connect("104.248.155.101", "admin", "123456");
-    cluster2 = Cluster.connect("170.64.210.210", "admin", "123456");
+    cluster1 = Cluster.connect("139.59.125.14", "admin", "123456");
+    cluster2 = Cluster.connect("128.199.140.121", "admin", "123456");
     bucket1 = cluster1.bucket("tiennm5");
     bucket2 = cluster2.bucket("tiennm5");
   }
@@ -38,8 +38,9 @@ public class CouchbaseReplicationTest {
 
     GetResult result = collection2.get(randomKey);
 
+    System.out.println(result.contentAs(String.class));
     // Check if the document is successfully retrieved
-    if (result.contentAs(String.class).equals(randomKey)) {
+    if (result.contentAs(String.class).equals(randomValue)) {
       System.out.println("Replication is working correctly");
     } else {
       System.out.println("Replication is not working correctly");
@@ -49,4 +50,3 @@ public class CouchbaseReplicationTest {
     // collection1.remove(randomKey);
   }
 }
-Warning: At least two servers with the data service are required to provide replication.
