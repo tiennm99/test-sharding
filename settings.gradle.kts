@@ -1,2 +1,1 @@
-rootProject.name = "couchbase-benchmark"
-
+rootProject.name = "test-sharding"

@@ -1,3 +1,3 @@
-# couchbase-benchmark
+# test-sharding
 
-Benchmark Couchbase Replication
+Test sharding java server with Couchbase replication, Redis replication and Kafka
